@@ -1,0 +1,41 @@
+
+> Notes: For convenience, we will simulate the real-life implementation by using:
+> * an input file, having the following structure:
+>    * *the first line:*
+>       * starts with _"N:"_
+>       * the number N of total parking spaces
+>       * ex.: _N:43_
+>    * *the second line (optional):*
+>       * starts with _"B:"_
+>       * the pollution buffer (percentage)
+>       * ex.: _B:10_
+>    * *the third line:*
+>       * starts with _"X:"_
+>       * the number X of total entries
+>       * ex.: _X:2_
+>    * *the following X lines:*
+>       * start with _"I:"_
+>       * the action sequence for each entry - **1** for a car entry, **0** for no entry
+>       * ex.: _I:100111000_
+>    * *the following line (optional):*
+>       * starts with _"P:"_
+>       * the action sequence for parking - **1** for a car park, **0** for no park, **2** for a car leaving without exit (un-park)
+>       * ex.: _P:001011201_
+>    * *the last line:*
+>       * starts with _"E:"_
+>       * the action sequence for the exit - **1** for a car exit, **0** for no exit
+>       * ex.: _E:000001111_
+>
+> * an output file, having the following structure:
+>    * *the first line:*
+>       * starts with _"T:"_
+>       * the sequence of total cars in the parking lot (at a given moment)
+>       * ex.: _T:123576543_
+>    * *the second line (optional):*
+>       * starts with _"P:"_
+>       * the sequence of parked cars in the parking lot (at a given moment)
+>       * ex.: _P:001123223_
+>    * *the third line:*
+>       * starts with _"R:"_
+>       * the sequence of not yet parked cars in the parking lot, with their engine running (at a given moment)
+>       * ex.: _R:122453320
