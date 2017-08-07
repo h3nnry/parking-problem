@@ -280,8 +280,8 @@ class ParkingProcessor
     private function checkPolutionPercentage()
     {
         $carsWithEngineRunning = $this->countCarsWithRunningEngine();
-        $entryCars = $this->carsEntries->get('entry')->count();
-        $polutionPercentage = number_format(($carsWithEngineRunning / $entryCars), 2) * 100;
+        $totalParkingPlaces = $this->totalParkingPlaces->count();
+        $polutionPercentage = number_format(($carsWithEngineRunning / $totalParkingPlaces), 2) * 100;
         $polutionDifference = $polutionPercentage - $this->polutionBuffer->get('polutionBuffer');
         if ($polutionDifference > 0) {
             throw new \Exception('PolutionBufferException: Cars with runing engine exceded the limit with %s%%', $polutionDifference);

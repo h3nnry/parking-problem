@@ -13,8 +13,6 @@ try {
     $classLoader = new AutoLoader('App');
     $classLoader->register();
 
-
-
     $parkingProcessor = new ParkingProcessor();
     $parkingProcessor->init();
 } catch (\Exception $e) {

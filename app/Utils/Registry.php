@@ -58,6 +58,9 @@ class Registry
         return count($this->array);
     }
 
+    /**
+     * @return array
+     */
     public function getData()
     {
         return $this->array;
